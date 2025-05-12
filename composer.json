@@ -1,0 +1,24 @@
+{
+    "name": "smartango/verygrabber",
+    "description": "generic grabber",
+    "type": "library",
+    "scripts": {
+        "test" : "phpunit"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "7.9.3",
+        "phpunit/phpunit": "12.1.5",
+        "phpunit/php-invoker": "6.0.0"
+    }, 
+    "autoload": {
+        "psr-4": {
+            "smrtg\\VeryGrabber\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniele Cruciani",
+            "email": "daniele@smartango.com"
+        }
+    ]
+}

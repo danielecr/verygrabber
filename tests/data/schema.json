@@ -1,0 +1,76 @@
+{
+    "type": "array",
+    "repeatOn": "//li[contains(@class,'productOffers-listItem')]",
+    "elementDef": {
+	"type": "object",
+	"attrs": [
+	    {
+		"name" : "seller",
+		"elementDef": {
+		    "type": "string",
+		    "relXpath": ".//a[contains(@class,'productOffers-listItemOfferLink')]/@data-shop-name",
+		    
+		    "wrapFun": "utf8_decode"
+		}
+	    },
+	    {
+		"name" : "sellerShopLink",
+		"elementDef": {
+		    "type": "string",
+		    "relXpath": ".//a[contains(@class,'productOffers-listItemOfferRatingstext')]/@href",
+		    
+		    "wrapFun": "utf8_decode"
+		}
+	    },
+	    {
+		"name" : "title",
+		"elementDef": {
+		    "type": "string",
+		    "relXpath": ".//span[contains(@class,'productOffers-listItemTitleInner')]",
+		    "wrapFun": "utf8_decode"
+		}
+	    },
+	    {
+		"name" : "shippingOptions",
+		"elementDef": {
+		    "type": "array",
+		    "repeatOn": ".//div[contains(@class,'productOffers-listItemOfferShippingDetails')]/div[contains(@class,'table-row')]",
+		    "elementDef": {
+			"type": "object",
+			"attrs": [
+			    {
+				"name": "price",
+				"elementDef": {
+				    "type": "string",
+				    "hasClass": "productOffers-listItemOfferShippingDetailsLeft",
+				    "relXpath": ".// ",
+				    "wrapFun": "utf8_decode"
+				}
+			    },
+			    {
+				"name": "priceNum",
+				"elementDef": {
+				    "type": "string",
+				    "hasClass": "productOffers-listItemOfferShippingDetailsLeft",
+				    "relXpath": ".// ",
+				    "pregMatch": "/([0-9,.]+)/",
+				    "wrapFun": "utf8_decode"
+				}
+			    },
+			    {
+				"name": "name",
+				"elementDef": {
+				    "type": "string",
+				    "hasClass":  "productOffers-listItemOfferShippingDetailsRightItem",
+				    "elAttribute": "title",
+				    "wrapFun": "utf8_decode"
+				}
+			    }
+			]
+			
+		    }
+		}
+	    }
+	]
+    }
+}

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  verygrabber:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/data
+    container_name: verygrabber
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+    environment:
+      - VIRTUAL_HOST=verygrabber.local
+      - LETSENCRYPT_HOST=verygrabber.local
