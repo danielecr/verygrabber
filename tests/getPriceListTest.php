@@ -1,10 +1,10 @@
 <?php
 
-//use \PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 
 use \smrtg\VeryGrabber\GrabFromSchema;
 
-class getPriceListTest extends PHPUnit_Framework_TestCase
+class getPriceListTest extends TestCase
 {
     public function testExtractData()
     {
