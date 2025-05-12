@@ -1,12 +1,17 @@
 {
     "name": "smartango/verygrabber",
-    "description": "generic grabber",
+    "description": "generic grabber based on DOMDocument, grabbing infos from an html page",
+    "keywords": [
+        "grabber",
+        "scraper",
+        "parser",
+        "domdocument"
+    ],
     "type": "library",
     "scripts": {
         "test" : "phpunit"
     },
     "require-dev": {
-        "guzzlehttp/guzzle": "7.9.3",
         "phpunit/phpunit": "12.1.5",
         "phpunit/php-invoker": "6.0.0"
     }, 
